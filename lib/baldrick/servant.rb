@@ -5,11 +5,11 @@ module Baldrick
     include Configuration
 
     def initialize
-      @jobs, @listeners = [], []
+      @tasks, @listeners = [], []
     end
      
-    def add_job job
-      @jobs << job
+    def add_task task
+      @tasks << task
     end
 
     def add_listener listener
@@ -21,7 +21,7 @@ module Baldrick
     end
 
     def follow order
-      @jobs.each{|job| job.run order}
+      @tasks.each{|task| task.run order}
     end
 
     private

@@ -1,5 +1,4 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
-require 'baldrick/servant'
 require 'lib/baldrick/configuration_behaviour'
 
 include Baldrick
@@ -24,14 +23,14 @@ describe Servant do
     @servant.serve
   end
 
-  it 'should perform all jobs for an executed order' do
+  it 'should perform all tasks for an executed order' do
     order = stub('order')
     @servant.add_listener mock('listener', :new_orders => [order])
-    2.times do |job_number|
+    2.times do |task_number|
 
-      @servant.add_job (job = mock("job #{job_number}"))
+      @servant.add_task(task = mock("task #{task_number}"))
 
-      job.should_receive(:run).with order
+      task.should_receive(:run).with order
     end
 
     @servant.serve

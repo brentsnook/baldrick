@@ -39,16 +39,16 @@ describe 'a configurable object', :shared => true do
                   
   end
 
-  describe 'when told how to perform a job' do
+  describe 'when told how to perform a task' do
 
-    it 'should create a new job from the instructions given' do
+    it 'should create a new task from the instructions given' do
 
       procedure = lambda {}
-      Job.stub!(:new).with(/put the kettle on/, {:only_if => :not_already_boiled}, procedure).and_return(job = stub('job'))
+      Task.stub!(:new).with(/put the kettle on/, procedure).and_return(task = stub('job'))
 
-      @object.should_receive(:add_job).with job
+      @object.should_receive(:add_task).with task
 
-      @object.to /put the kettle on/, {:only_if => :not_already_boiled}, procedure
+      @object.to /put the kettle on/, procedure
     end
 
   end

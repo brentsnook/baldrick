@@ -4,3 +4,5 @@ $:.unshift(File.dirname(__FILE__)) unless
 module Baldrick
   VERSION = '0.0.1'
 end
+
+Dir.glob(File.dirname(__FILE__) + '/baldrick/**/*.rb').each {|file| require file}
