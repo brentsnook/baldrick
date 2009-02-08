@@ -1,6 +1,6 @@
 class CommandOutput
 
-  OUTPUT_FILE = File.dirname(__FILE__) + '../../../tmp/command_output'
+  OUTPUT_FILE = File.expand_path(File.dirname(__FILE__) + '/../../../tmp/command_output')
 
   def self.contents
     File.read OUTPUT_FILE
@@ -9,9 +9,9 @@ class CommandOutput
   def self.clear
     FileUtils.rm OUTPUT_FILE, :force => true
   end
-
+ 
   def self.add output
-    File.open(OUTPUT_FILE, 'a') {|f| f.write(output) }    
+    File.open(OUTPUT_FILE, 'a') {|f| f.write(output) }
   end
   
 end

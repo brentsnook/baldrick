@@ -2,7 +2,11 @@ module Baldrick
   class CLI
     def self.execute(stdout, args=[])
       servant = Servant.new
+
+      servant.register_listener_type :injour, InjourListener
+
       servant.instance_eval File.read(args[0])
+      
       while should_serve? do
         servant.serve
         sleep 5

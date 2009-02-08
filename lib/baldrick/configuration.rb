@@ -15,7 +15,7 @@ module Baldrick
       listener_classes[type] = listener_class
     end
 
-    def to(matcher, procedure)
+    def to(matcher, &procedure)
       add_task Task.new(matcher, procedure)
     end
 

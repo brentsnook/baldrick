@@ -62,7 +62,7 @@
       <file leaf-file-name="servant.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/baldrick/servant.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="12" selection-start="179" selection-end="179" vertical-scroll-proportion="-6.0">
+            <state line="19" column="10" selection-start="272" selection-end="272" vertical-scroll-proportion="-8.769231">
               <folding />
             </state>
           </provider>
@@ -71,52 +71,79 @@
       <file leaf-file-name="configuration.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/baldrick/configuration.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="46" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
+            <state line="28" column="0" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cli_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/cli_spec.rb">
+      <file leaf-file-name="config" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/resources/config">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="64" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+            <state line="4" column="53" selection-start="117" selection-end="117" vertical-scroll-proportion="0.077922076">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration_behaviour.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/configuration_behaviour.rb">
+      <file leaf-file-name="injour_listener.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/baldrick/injour_listener.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="10" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.0">
+            <state line="25" column="6" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="injour.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/steps/injour.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="46" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/steps/order.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="56" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="command_output.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/steps/helpers/command_output.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="89" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/baldrick/task.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="52" selection-start="393" selection-end="393" vertical-scroll-proportion="0.27272728">
+            <state line="14" column="12" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="servant_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/servant_spec.rb">
+      <file leaf-file-name="cli.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/baldrick/cli.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="9" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
+            <state line="19" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/task_spec.rb">
+      <file leaf-file-name="servant.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/steps/servant.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="62" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -341,6 +368,28 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="features" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="baldrick" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="baldrick" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="baldrick" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="bin" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -360,7 +409,7 @@
       <abbreviatePackageNames />
       <showStructure ProjectPane="false" />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
   </component>
@@ -686,51 +735,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features/steps/order.rb">
+    <entry file="file://$PROJECT_DIR$/features/steps/hooks.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/steps/injour.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="46" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/steps/servant.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/follow_injour_orders.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec.opts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/baldrick">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="186" selection-end="221" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/baldrick/cli.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+        <state line="6" column="25" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -742,58 +749,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/cli_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="64" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/baldrick/servant.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="179" selection-end="179" vertical-scroll-proportion="-6.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/servant_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="9" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/baldrick/configuration.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="46" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/configuration_behaviour.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="10" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.0">
+        <state line="27" column="44" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/task_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="62" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
+        <state line="44" column="6" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/injour_listener_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="10" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/lib/baldrick/cli_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="9" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/baldrick/task.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="393" selection-end="393" vertical-scroll-proportion="0.27272728">
+        <state line="14" column="12" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/injour.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="46" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/baldrick/injour_listener.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="6" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/baldrick/cli.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/baldrick/servant.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="272" selection-end="272" vertical-scroll-proportion="-8.769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/servant.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/baldrick/configuration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/helpers/command_output.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="89" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/order.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="56" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/resources/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="53" selection-start="117" selection-end="117" vertical-scroll-proportion="0.077922076">
           <folding />
         </state>
       </provider>

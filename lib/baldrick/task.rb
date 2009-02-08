@@ -5,12 +5,10 @@ module Baldrick
     end
 
     def run order
-      matches = @matcher.match order
-
-      if matches
-        all_arguments = matches[1..-1] << order
+      if matches = @matcher.match(order[:what])
+        all_arguments = matches[1..-1] << order[:what]
         accepted_arguments = all_arguments[0..(@procedure.arity - 1)]
-        instance_eval {@procedure.call(accepted_arguments)}
+        @procedure.call(*accepted_arguments)
       end
     end
 

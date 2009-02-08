@@ -17,7 +17,7 @@ module Baldrick
     end
 
     def serve
-      new_orders.each {|order| follow order}
+      orders.each {|order| follow order}
     end
 
     def follow order
@@ -26,8 +26,8 @@ module Baldrick
 
     private
 
-    def new_orders
-      @listeners.inject([]) {|all_orders, listener| all_orders + listener.new_orders}
+    def orders
+      @listeners.inject([]) {|all_orders, listener| all_orders + listener.orders}
     end
 
   end

@@ -11,10 +11,10 @@ describe Servant do
     @servant = Servant.new
   end
 
-  it 'should execute all new orders from all listeners' do
+  it 'should execute all orders from all listeners' do
     2.times do |listener_number|
       orders = [stub("order #{listener_number} a"), stub("order #{listener_number} b")]
-      listener = mock("listener #{listener_number}", :new_orders => orders)
+      listener = mock("listener #{listener_number}", :orders => orders)
       @servant.add_listener listener
 
       orders.each {|order| @servant.should_receive(:follow).with order}
@@ -25,7 +25,7 @@ describe Servant do
 
   it 'should perform all tasks for an executed order' do
     order = stub('order')
-    @servant.add_listener mock('listener', :new_orders => [order])
+    @servant.add_listener mock('listener', :orders => [order])
     2.times do |task_number|
 
       @servant.add_task(task = mock("task #{task_number}"))
