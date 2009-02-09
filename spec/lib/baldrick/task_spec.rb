@@ -52,7 +52,7 @@ describe Task do
     @matcher = stub('matcher', :match => ['', 'com', 'mand'])
     @procedure = stub('procedure', :arity => 3)
 
-    @procedure.should_receive(:call).with('com', 'mand', 'command')
+    @procedure.should_receive(:call).with('com', 'mand', {:what => 'command'})
 
     run :what => 'command'
   end
