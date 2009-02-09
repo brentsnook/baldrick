@@ -34,7 +34,7 @@ describe InjourListener do
 
   end
 
-  it 'should not return orders that have already been returned' do
+  it 'should only return new orders' do
 
     first_status = <<-FIRST_STATUS
 === nathan on dk3.mordhaus.net:43215 ===

@@ -3,7 +3,7 @@ require 'set'
 module Baldrick
   class InjourListener
 
-    def initialize options
+    def initialize options = {}
       @previous_orders = []
     end
 

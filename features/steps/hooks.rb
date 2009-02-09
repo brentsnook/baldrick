@@ -1,6 +1,6 @@
 Before do
   CommandOutput.clear
-  ScenarioProcess.run 'injour serve baldrickfeature 43216'
+  ScenarioProcess.run 'injour serve baldrickfeature 43216', 'injour_server'
 end
 
 After do

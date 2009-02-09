@@ -48,7 +48,7 @@ describe 'a configurable object', :shared => true do
 
       @object.should_receive(:add_task).with task
 
-      @object.to /put the kettle on/, procedure
+      @object.to /put the kettle on/, &procedure
     end
 
   end

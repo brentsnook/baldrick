@@ -1,3 +1,3 @@
 Then /^the order is followed$/ do
-  CommandOutput.contents.should contain 'Order followed'
+  CommandOutput.contents.should include 'Order followed'
 end
