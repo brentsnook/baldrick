@@ -16,7 +16,10 @@ class ScenarioProcess
     # this method of killing stuff is stinky....I long for something better
     @commands.each do |command|
       `ps`.each do |process|
-        matches = process.match /(\d*).*#{command}/
+        # the space at the front of the pattern is essential...
+        # otherwise this will only work intermittently; if the pid you want to kill
+        # is shorter than others in the process list then the group will not capture it        
+        matches = process.match /\s*(\d*).*#{Regexp.escape(command)}/
         `kill #{matches[1]}` if matches
       end
     end  

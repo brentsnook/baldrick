@@ -8,30 +8,28 @@ describe InjourListener do
     @listener = InjourListener.new
   end
 
-  describe 'when parsing injour output' do
-    it 'should correctly identify who, what, when and where for one or more statuses' do
-      @listener.stub!(:`).with('injour ls').and_return <<-STATUS
+  it 'should correctly identify who, what, when and where for one or more statuses' do
+    @listener.stub!(:`).with('injour ls').and_return <<-STATUS
 === toki on dk1.mordhaus.net:43215 ===
 * [05-Feb-2009 11:40 PM] fooood... libraries...
 === pickles on dk2.mordhaus.net:43215 ===
 * [05-Feb-2009 11:55 PM] @toki dood, its called a grocery store
       STATUS
 
-      @listener.orders.should == [
-        {
-          :who => 'toki',
-          :what => 'fooood... libraries...',
-          :where => 'dk1.mordhaus.net:43215',
-          :when => '05-Feb-2009 11:40 PM'
-        },
-        {
-          :who => 'pickles',
-          :what => '@toki dood, its called a grocery store',
-          :where => 'dk2.mordhaus.net:43215',
-          :when => '05-Feb-2009 11:55 PM'
-        }]
-    end
-
+    @listener.orders.should == [
+      {
+        :who => 'toki',
+        :what => 'fooood... libraries...',
+        :where => 'dk1.mordhaus.net:43215',
+        :when => '05-Feb-2009 11:40 PM'
+      },
+      {
+        :who => 'pickles',
+        :what => '@toki dood, its called a grocery store',
+        :where => 'dk2.mordhaus.net:43215',
+        :when => '05-Feb-2009 11:55 PM'
+      }
+    ]
   end
 
   it 'should only return new orders' do

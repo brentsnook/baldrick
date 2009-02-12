@@ -21,7 +21,7 @@ describe 'a configurable object', :shared => true do
       @object.listen_to :recognised_type
     end
 
-    it 'should configuration a new listener with given options' do
+    it 'should configure a new listener with given options' do
       listener_class = stub 'listener class'
       @object.stub!(:listener_class_for).with(:listener_type).and_return listener_class
       @object.stub! :add_listener
