@@ -7,7 +7,7 @@ module Baldrick
       
       servant = Servant.new
 
-      servant.register_listener_type :injour, InjourListener 
+      Servant.register_listener_type :injour, Listeners::InjourListener 
       servant.instance_eval File.read(options[:config_file]), options[:config_file], 1
 
       stdout << "Servant started...\n"; stdout.flush   

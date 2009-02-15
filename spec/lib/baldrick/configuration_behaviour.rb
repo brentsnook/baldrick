@@ -5,16 +5,16 @@ describe 'a configurable object', :shared => true do
   end
 
   it 'should be told of how to listen for orders of a particular type' do
-    @object.register_listener_type :type, (listener_class = mock('listener class'))
+    described_type.register_listener_type :type, (listener_class = mock('listener class'))
 
-    @object.listener_class_for(:type).should == listener_class
+    described_type.listener_class_for(:type).should == listener_class
   end
 
   describe 'when told where to listen for orders' do
 
     it 'should add a new listener of a recognised type' do
       listener_class = stub('listener class', :new => (listener = mock('listener')))
-      @object.stub!(:listener_class_for).with(:recognised_type).and_return listener_class
+      described_type.stub!(:listener_class_for).with(:recognised_type).and_return listener_class
 
       @object.should_receive(:add_listener).with listener
 
@@ -23,7 +23,7 @@ describe 'a configurable object', :shared => true do
 
     it 'should configure a new listener with given options' do
       listener_class = stub 'listener class'
-      @object.stub!(:listener_class_for).with(:listener_type).and_return listener_class
+      described_type.stub!(:listener_class_for).with(:listener_type).and_return listener_class
       @object.stub! :add_listener
 
       listener_class.should_receive(:new).with({:option => true})

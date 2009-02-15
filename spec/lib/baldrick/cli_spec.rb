@@ -18,7 +18,7 @@ describe CLI, "execute" do
 
     CLI.stub!(:should_serve?).and_return false
 
-    @servant.should_receive(:register_listener_type).with :injour, InjourListener
+    Servant.should_receive(:register_listener_type).with :injour, Listeners::InjourListener
 
     CLI.execute @stdout, nil
   end
