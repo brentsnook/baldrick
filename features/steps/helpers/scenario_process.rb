@@ -13,7 +13,7 @@ class ScenarioProcess
   end
 
   def self.kill_all
-    # this method of killing stuff is stinky....I long for something better
+    # this method of killing stuff sucks, feels error prone
     @commands.each do |command|
       `ps`.each do |process|
         # the space at the front of the pattern is essential...

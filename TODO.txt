@@ -1,24 +1,10 @@
-!!! - Change message history in injour listener - store time of last message for each user
 
-!!! - add listener registration as a class method instead
-
-!!! - move listeners into sub module
-
-!!! - added skeleton of RSSLIstener
-
-
-- Make it runnable via a single script with include - how does Sinatra do it?
-
-- remove command line - make poll period configurable via single file?
-
-- Allow servant to be killed gracefully - check how sinatra does it
-
-
-
+- fix bug with multiple stack traces after error
 
 - Implement feature: follow RSS orders (make sure cruise format is supported)
 
 - Implement feature: follow Atom orders (make sure Hudson format is supported)
+
 
 
 
@@ -38,14 +24,6 @@
 - Final test run
 
 - Publish to rubyforge
-
-
-
-
-
-
-
-
 
 - Documentation on wiki
 
@@ -70,4 +48,9 @@
   - Other Listeners Planned
     - Twitter
     - Email 
+
+
+
+- move registration of injour listener somewhere else
+
 - Turnip logo

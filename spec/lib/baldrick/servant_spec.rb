@@ -1,11 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
-require 'lib/baldrick/configuration_behaviour'
 
 include Baldrick
 
 describe Servant do
-
-  it_should_behave_like 'a configurable object'
 
   before(:each) do
     @servant = Servant.new

@@ -1,6 +1,0 @@
-require File.dirname(__FILE__) + '/../steps/helpers/command_output'
-
-listen_to :injour
-to /follow an order/ do
-  CommandOutput.add 'Order followed'
-end

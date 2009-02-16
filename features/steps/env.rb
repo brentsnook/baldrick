@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../../lib/baldrick"
+require File.dirname(__FILE__) + '/../../lib/baldrick'
 
 gem 'cucumber'
 require 'cucumber'

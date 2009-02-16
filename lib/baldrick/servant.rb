@@ -1,9 +1,7 @@
 module Baldrick
 
   class Servant
-
-    include Configuration
-
+    
     def initialize
       @tasks, @listeners = [], []
     end
