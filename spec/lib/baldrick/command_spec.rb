@@ -47,7 +47,7 @@ describe Command do
   
     it 'should allow wait period between service to be specified' do
       @command.stub!(:should_serve?).and_return true, false
-      @command.serve_every 10
+      @command.listen_every 10
   
       @command.should_receive(:sleep).with(10)
     

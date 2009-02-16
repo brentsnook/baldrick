@@ -22,7 +22,7 @@ module Baldrick
       true
     end 
     
-    def serve_every period
+    def listen_every period
       @wait_period = period
     end  
     
