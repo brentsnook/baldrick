@@ -1,0 +1,42 @@
+require 'webrick'
+
+server = WEBrick::HTTPServer.new :Port => 1726
+
+server.mount_proc("/rss") do |request, response|
+  response.body = <<-RSS
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title></title>
+    <link></link>
+    <description></description>
+    <language></language>
+    <pubDate></pubDate>
+    <lastBuildDate></lastBuildDate>
+    <docs></docs>
+    <generator></generator>
+    <managingEditor></managingEditor>
+    <webMaster></webMaster>
+    <ttl></ttl>
+
+    <item>
+      <title>hey you, follow an order</title>
+      <link></link>
+      <description></description>
+      <pubDate>Tue, 20 Apr 2000 04:00:00 GMT</pubDate>
+      <guid></guid>
+    </item>
+  </channel>
+</rss>
+RSS
+  response['Content-Type'] = 'text/xml' 
+end
+
+%w(INT TERM).each do |signal|
+  trap signal do
+    server.shutdown
+    exit!
+  end
+end
+
+server.start

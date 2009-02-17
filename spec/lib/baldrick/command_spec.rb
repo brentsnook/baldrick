@@ -19,7 +19,11 @@ describe Command do
     it 'should register the injour listener type by default' do
       @command.listener_class_for(:injour).should == Listeners::InjourListener
     end
-  
+    
+    it 'should register the RSS listener type by default' do
+      @command.listener_class_for(:rss).should == Listeners::RSSListener
+    end  
+    
     it 'should display a startup message' do
       @command.stub!(:should_serve?).and_return false
     

@@ -5,4 +5,12 @@ module Baldrick
   VERSION = '0.0.1'
 end
 
-Dir.glob(File.dirname(__FILE__) + '/baldrick/**/*.rb').each {|file| require file}
+require 'baldrick/listeners/order_filter'
+require 'baldrick/listeners/injour_listener'
+require 'baldrick/listeners/rss_listener'
+
+require 'baldrick/servant'
+require 'baldrick/task'
+
+require 'baldrick/command'
+require 'baldrick/action_orders'

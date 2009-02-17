@@ -5,7 +5,7 @@ class ScenarioProcess
   def self.run command, name
     log = File.expand_path(File.dirname(__FILE__) + "/../../../tmp/#{name}.log")
     FileUtils.rm log, :force => true
-    process = IO.popen "(#{command}) 2>&1 > #{log}"
+    process = IO.popen "(#{command}) > #{log} 2>&1"
     process.sync = true
     wait_for log
 

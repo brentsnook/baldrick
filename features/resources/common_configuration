@@ -1,11 +1,10 @@
-# don't give this file a .rb extension or cucumber will try to require it resulting in the server starting
+# as with all servant files, don't give this file a .rb extension or cucumber will try to require it resulting in the server starting when you don't want it to
 
 require File.dirname(__FILE__) + '/../../lib/baldrick_serve'
 require File.dirname(__FILE__) + '/../steps/helpers/command_output'
 
 listen_every 0.5
-listen_to :injour
 
-to /follow an order/ do
+to /follow an order/m do
   CommandOutput.add 'Order followed'
 end

@@ -6,30 +6,7 @@ describe InjourListener do
 
   before(:each) do
     @listener = InjourListener.new
-  end
-
-  it 'should correctly identify who, what, when and where for one or more statuses' do
-    @listener.stub!(:`).with('injour ls').and_return <<-STATUS
-=== toki on dk1.mordhaus.net:43215 ===
-* [05-Feb-2009 11:40 PM] fooood... libraries...
-=== pickles on dk2.mordhaus.net:43215 ===
-* [05-Feb-2009 11:55 PM] @toki dood, its called a grocery store
-STATUS
-
-    @listener.orders.should == [
-      {
-        :who => 'toki',
-        :what => 'fooood... libraries...',
-        :where => 'dk1.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:40 PM'
-      },
-      {
-        :who => 'pickles',
-        :what => '@toki dood, its called a grocery store',
-        :where => 'dk2.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:55 PM'
-      }
-    ]
+    Time.stub!(:parse)
   end
 
   it 'should only return new orders' do
@@ -54,7 +31,7 @@ SECOND_STATUS
         :who => 'murderface',
         :what => 'no kidding',
         :where => 'dk4.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:31 PM'
+        :when => nil
       }]
   end
   
@@ -71,25 +48,35 @@ STATUS
 
     @listener.stub!(:`).with('injour ls').and_return status
 
-    @listener.orders.should == [
-      {
-        :who => 'skwisgaar',
-        :what => 'stops copies me!',
-        :where => 'dk5.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:30 PM'
-      },
-      {
-        :who => 'skwisgaar',
-        :what => 'I means its, stops copies me!',
-        :where => 'dk5.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:31 PM'
-      },     
-      {
-        :who => 'skwisgaar',
-        :what => 'STOPS COPIES ME!',
-        :where => 'dk5.mordhaus.net:43215',
-        :when => '05-Feb-2009 11:32 PM'
-      }]
-  end  
+    @listener.orders.collect{|order| order[:what]}.should == ['stops copies me!', 'I means its, stops copies me!', 'STOPS COPIES ME!']
+  end 
+  
+  describe 'reading individual parts of an order' do
+    
+    before :each do
+      status = <<-STATUS
+=== twinkletits on dk6.mordhaus.net:43215 ===
+* [05-Feb-2009 11:30 PM] who wants a banana sticker?
+STATUS
+      @listener.stub!(:`).with('injour ls').and_return status
 
+      @order = @listener.orders.first
+    end
+    
+    it "should interpret injour user as 'who'" do
+      @order[:who].should == 'twinkletits'
+    end 
+
+    it "should interpret status as 'what'" do
+      @order[:what].should == 'who wants a banana sticker?'
+    end
+
+    it "should interpret injour address as 'where'" do
+      @order[:where].should == 'dk6.mordhaus.net:43215'
+    end
+       
+    it "should interpret parsed time as 'when'" do
+      @order[:when].should == Time.parse('05-Feb-2009 11:30 PM')
+    end
+  end
 end
