@@ -25,7 +25,14 @@ module Baldrick
     private
 
     def orders
-      @listeners.inject([]) {|all_orders, listener| all_orders + listener.orders}
+      @listeners.inject([]) do |all_orders, listener|
+        begin
+          all_orders + listener.orders
+        rescue Exception => exception
+          puts exception 
+          all_orders  
+        end
+      end
     end
 
   end

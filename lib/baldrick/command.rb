@@ -5,7 +5,7 @@ module Baldrick
     include Singleton
     
     def initialize
-      @listener_classes = {:injour => Listeners::InjourListener, :rss => Listeners::RSSListener}
+      @listener_classes = {:injour => Listeners::InjourListener, :feed => Listeners::FeedListener}
       @servant = Servant.new
       @wait_period = 2  
     end

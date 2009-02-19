@@ -32,5 +32,14 @@ describe Servant do
 
     @servant.serve
   end
+  
+  it 'should recover from a problem with a listener and continue' do
+    @servant.add_listener(first_listener = mock('first listener'))
+    @servant.add_listener(second_listener = mock('second listener'))
+    first_listener.stub!(:orders).and_raise Exception
+    
+    second_listener.should_receive(:orders).and_return []
 
+    @servant.serve   
+  end
 end

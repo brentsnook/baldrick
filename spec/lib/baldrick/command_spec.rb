@@ -20,8 +20,8 @@ describe Command do
       @command.listener_class_for(:injour).should == Listeners::InjourListener
     end
     
-    it 'should register the RSS listener type by default' do
-      @command.listener_class_for(:rss).should == Listeners::RSSListener
+    it 'should register the feed listener type by default' do
+      @command.listener_class_for(:feed).should == Listeners::FeedListener
     end  
     
     it 'should display a startup message' do

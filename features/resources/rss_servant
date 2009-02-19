@@ -1,2 +1,0 @@
-load File.dirname(__FILE__) + '/common_configuration'
-listen_to :rss, :at => 'http://localhost:1726/rss'

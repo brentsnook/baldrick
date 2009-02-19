@@ -1,12 +1,12 @@
-Feature: Follow RSS orders
+Feature: Follow feed orders
 
-  As a person interested in an RSS feed
+  As a person interested in a web feed
   I want new items to be followed as orders
   So that tasks will be performed according to the content of each item
     
-  Scenario: RSS feed item contains a new order
+  Scenario: Feed item contains a new order
 
-    Given a servant is listening for orders from RSS
+    Given a servant is listening for orders from a feed
 
     When a new item appears in the feed containing an order
 

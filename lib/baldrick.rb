@@ -5,9 +5,10 @@ module Baldrick
   VERSION = '0.0.1'
 end
 
-require 'baldrick/listeners/order_filter'
 require 'baldrick/listeners/injour_listener'
-require 'baldrick/listeners/rss_listener'
+
+require 'baldrick/listeners/feed_listener'
+require 'baldrick/listeners/feed_orders'
 
 require 'baldrick/servant'
 require 'baldrick/task'

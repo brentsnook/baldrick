@@ -7,18 +7,6 @@ server.mount_proc("/rss") do |request, response|
 <?xml version="1.0"?>
 <rss version="2.0">
   <channel>
-    <title></title>
-    <link></link>
-    <description></description>
-    <language></language>
-    <pubDate></pubDate>
-    <lastBuildDate></lastBuildDate>
-    <docs></docs>
-    <generator></generator>
-    <managingEditor></managingEditor>
-    <webMaster></webMaster>
-    <ttl></ttl>
-
     <item>
       <title>hey you, follow an order</title>
       <link></link>
