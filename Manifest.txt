@@ -3,9 +3,6 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
-baldrick.iml
-baldrick.ipr
-baldrick.iws
 bin/baldrick
 features/follow_injour_orders.feature
 features/steps/env.rb
@@ -23,4 +20,3 @@ spec/spec_helper.rb
 tasks/rspec.rake
 test/test_baldrick.rb
 test/test_helper.rb
-tmp/tests.out
