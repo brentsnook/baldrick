@@ -5,6 +5,8 @@ module Baldrick
   VERSION = '0.0.1'
 end
 
+require 'nokogiri'
+
 require 'baldrick/listeners/injour_listener'
 
 require 'baldrick/listeners/feed_listener'

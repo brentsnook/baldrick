@@ -33,12 +33,13 @@ describe FeedOrders do
   
   describe "when identifying 'who'" do
 
-    it 'should check for author name' do
+    it 'should check for nested author name' do
       FeedOrders.within(<<-FEED
 <feed>
   <item>
     <author>
       <name>George Orwell</name>
+      <uri>leave me out of it!</uri>
     </author>
   </item>
 </feed>
@@ -50,24 +51,13 @@ FEED
       FeedOrders.within(<<-FEED
 <feed>
   <item>
-    <author>Chuck Palahniuk</author>
-  </item>
-</feed>
-FEED
-      ).first[:who].should == 'Chuck Palahniuk'
-    end
-
-    it 'should check for creator' do
-      FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <creator>Alan Moore</creator>
+    <author>Alan Moore</author>
   </item>
 </feed>
 FEED
       ).first[:who].should == 'Alan Moore'
     end
-  end 
+  end
   
   describe "when identifying 'when'" do
     
@@ -99,17 +89,16 @@ FEED
       ).first[:where].should == 'http://thing'
     end
     
-    it 'should check link href attribute' do
+    it 'should check alternate link href attribute' do
       FeedOrders.within(<<-FEED
 <feed>
   <item>
-    <link href="http://thing" />
+    <link rel="alternate" href="http://thing" />
+    <link rel="not so alternate" href="ignore me" />     
   </item>
 </feed>
 FEED
       ).first[:where].should == 'http://thing'
     end
   end
-end  
-
-  # it "should attempt to obtain the 'where' from a variety of locations"
+end

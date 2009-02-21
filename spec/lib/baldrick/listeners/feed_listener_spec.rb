@@ -32,5 +32,12 @@ describe FeedListener do
     
     @listener.orders.should == [new_news, latest_news]    
   end
+  
+  it "should handle orders with no 'when' specified" do
+    @listener.stub! :open
+    FeedOrders.stub!(:within).and_return  [{:what => 'shake has gone...', :when => nil}]
+
+    @listener.orders 
+  end  
    
 end  
