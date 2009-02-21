@@ -9,9 +9,7 @@ module Baldrick::Listeners
     private
     
     def self.order_from item
-      
       locator = XPathLocator.from_node item
-      
       publish_time = locator.find_text_matching 'published/text()', 'pubDate/text()', 'date/text()', 'updated/text()'
       {
         :what => item.to_s,
