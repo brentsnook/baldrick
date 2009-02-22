@@ -3,102 +3,61 @@ require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 include Baldrick::Listeners
 
 describe FeedOrders do
-
-  it "should use the entire item as the value of 'what'" do
-    content = '<feed><item>bad replicant</item></feed>'
-    FeedOrders.within(content).first[:what].should == '<item>bad replicant</item>'
+  
+  before :each do
+    @item_locator = mock('item locator')
+    XPathLocator.stub!(:from_xml).and_return @item_locator
   end
   
-  describe 'when identifying an order' do
-    it 'should recognise an item' do
-      FeedOrders.within('<feed><item> </item><item> </item></feed>').size.should == 2        
+  it 'should first search items then elements for orders' do
+    @item_locator.should_receive(:find_nodes_matching).with('//item', '//entry').and_return []
+    
+    FeedOrders.within ''
+  end
+  
+  it 'should create an order for every item found' do
+    node = stub 'node', :null_object => true
+    @item_locator.stub!(:find_nodes_matching).and_return [node, node, node]
+    
+    FeedOrders.within('').size.should == 3
+  end   
+  
+  describe 'when creating an order' do
+  
+    before :each do
+      @node = stub 'node', :null_object => true
+      @item_locator.stub!(:find_nodes_matching).and_return [@node]
+      @text_locator = stub('item locator', :null_object => true)
+      XPathLocator.stub!(:from_node).and_return @text_locator
+      
+      @time = Time.now
+      Time.stub!(:parse).and_return @time
+    end
+      
+    it "should parse the publish time and use it as 'when'" do
+      Time.stub!(:parse).with(@time.to_s).and_return @time
+      @text_locator.stub!(:find_text_matching).with('published/text()', 'pubDate/text()', 'date/text()', 'updated/text()').and_return @time.to_s
+      
+      FeedOrders.within('').first[:when].should == @time  
     end  
-  
-    it 'should recognise an entry' do
-      FeedOrders.within('<feed><entry> </entry><entry> </entry></feed>').size.should == 2
+    
+    it "should use the contents of the item as 'what'" do
+      @text_locator.stub!(:find_text_matching).and_return stub('text', :null_object => true)
+      @node.stub!(:to_s).and_return 'item node contents'
+             
+      FeedOrders.within('').first[:what].should == 'item node contents'
     end
     
-    it 'should not recognise any other tag' do
-      FeedOrders.within('<feed><entry> </entry><entry> </entry></feed>').size.should == 2   
-    end
+    it "should use the author as the 'who'" do
+      @text_locator.stub!(:find_text_matching).with('author/name/text()', 'author/text()').and_return 'Alan Moore'
+             
+      FeedOrders.within('').first[:who].should == 'Alan Moore'     
+    end  
     
-    it 'should not care if the order tag has attributes' do
-      FeedOrders.within('<feed><item atribute="thingo"> </item></feed>').size.should == 1       
-    end
-    
-    it 'should not care if the order tag has a namespace' do
-      FeedOrders.within('<feed><blah:item> </blah:item></feed>').size.should == 1
-    end    
-  end
-  
-  describe "when identifying 'who'" do
-
-    it 'should check for nested author name' do
-      FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <author>
-      <name>George Orwell</name>
-      <uri>leave me out of it!</uri>
-    </author>
-  </item>
-</feed>
-FEED
-      ).first[:who].should == 'George Orwell'
-    end
-    
-    it 'should check for author' do
-      FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <author>Alan Moore</author>
-  </item>
-</feed>
-FEED
-      ).first[:who].should == 'Alan Moore'
-    end
-  end
-  
-  describe "when identifying 'when'" do
-    
-    ['published', 'updated', 'date', 'pubDate'].each do |date_tag|
-      it "should check #{date_tag}" do
-        FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <#{date_tag}>Fri Feb 20 00:07:48 +1100 2009</#{date_tag}>
-  </item>
-</feed>
-FEED
-        ).first[:when].should == Time.parse('Fri Feb 20 00:07:48 +1100 2009')
-      end
-    end 
-    
-  end 
-  
-  describe "when identifying 'where'" do
-
-    it 'should check link contents' do
-      FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <link>http://thing</link>
-  </item>
-</feed>
-FEED
-      ).first[:where].should == 'http://thing'
-    end
-    
-    it 'should check alternate link href attribute' do
-      FeedOrders.within(<<-FEED
-<feed>
-  <item>
-    <link rel="alternate" href="http://thing" />
-    <link rel="not so alternate" href="ignore me" />     
-  </item>
-</feed>
-FEED
-      ).first[:where].should == 'http://thing'
-    end
+    it "should use the link as the 'where'" do
+      @text_locator.stub!(:find_text_matching).with('link/text()', "link[@rel='alternate']/@href").and_return 'http://internet.com'
+             
+      FeedOrders.within('').first[:where].should == 'http://internet.com'      
+    end  
   end
 end

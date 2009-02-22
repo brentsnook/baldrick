@@ -7,7 +7,8 @@ module Baldrick
     def initialize
       @listener_classes = {:injour => Listeners::InjourListener, :feed => Listeners::FeedListener}
       @servant = Servant.new
-      @wait_period = 2  
+      @wait_period = 2
+      @should_serve = true  
     end
       
     def execute(stdout)
@@ -19,8 +20,12 @@ module Baldrick
     end
 
     def should_serve?
-      true
-    end 
+      @should_serve
+    end
+    
+    def stop!
+      @should_serve = false  
+    end   
     
     def listen_every period
       @wait_period = period

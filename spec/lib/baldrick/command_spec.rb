@@ -56,9 +56,7 @@ describe Command do
       @command.should_receive(:sleep).with(10)
     
       @command.execute @stdout
-    end  
-  
-    it 'should allow server to be stopped with an interrupt'
+    end   
   end
   
   describe 'configuration' do

@@ -5,7 +5,6 @@ module Baldrick::Listeners
   class XPathLocator
     
     def self.from_xml xml
-      
       from_node Nokogiri::XML(strip_default_namespaces_from xml)
     end  
     

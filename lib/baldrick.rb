@@ -14,4 +14,4 @@ require 'baldrick/servant'
 require 'baldrick/task'
 
 require 'baldrick/command'
-require 'baldrick/action_orders'
+require 'baldrick/run_servant'

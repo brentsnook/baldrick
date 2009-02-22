@@ -1,12 +1,16 @@
 module Baldrick
-  module ActionOrders
+  module RunServant
 
     def self.included clazz
       # register shutdown hook ONLY when the module is included
       at_exit do
         raise $! if $!
         Baldrick::Command.instance.execute STDOUT
-      end    
+      end 
+      
+      trap(:INT) do
+        Baldrick::Command.instance.stop!
+      end     
     end  
     
     # send configuration messages to the command
