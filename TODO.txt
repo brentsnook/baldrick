@@ -1,8 +1,5 @@
 X add a spec around xpath locator - 1
 X convert feed_orders spec to be interaction based - 1
-- add a spec around action_orders
-- Should not ignore nil when in orders!!! ????????????????
-- check if injour orders are repeated
 
 - finish gem spec including gem dependencies
 - regenerate manifest
@@ -15,6 +12,8 @@ X convert feed_orders spec to be interaction based - 1
 - test on slashdot
 - test on twitter
 - test on thinkgeek
+
+- test dev and normal setup in clean GEMHOME
 
 - publish gem to rubyforge (0.0.1)
 
@@ -57,7 +56,7 @@ X convert feed_orders spec to be interaction based - 1
     - Email 
 
 
-
+- add a spec around run_servant
 - add ability to pass in feed listener xpath expressions for who, what, where, when during configuration
 - fix bug: displaying multiple stack traces after error
 - better way to log error with listener than puts

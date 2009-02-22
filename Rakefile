@@ -7,12 +7,15 @@ $hoe = Hoe.new('baldrick', Baldrick::VERSION) do |p|
   p.developer('FIXME full name', 'FIXME email')
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  p.rubyforge_name       = p.name # TODO this is default value
-  # p.extra_deps         = [
-  #   ['activesupport','>= 2.0.2'],
-  # ]
+  p.rubyforge_name       = p.name
+  p.extra_deps         = [
+    ['nokogiri','>= 1.1.1'],
+  ]
   p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"]
+    ['newgem', ">= #{::Newgem::VERSION}"],
+    ['rspec', '>= 1.1.12'],
+    ['cucumber', '>= 0.1.16'],
+    ['injour', '>= 0.2.3'],
   ]
   
   p.clean_globs |= %w[**/.DS_Store tmp *.log]
