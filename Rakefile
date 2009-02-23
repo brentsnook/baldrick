@@ -4,11 +4,10 @@ require File.dirname(__FILE__) + '/lib/baldrick'
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
 $hoe = Hoe.new('baldrick', Baldrick::VERSION) do |p|
-  p.developer('FIXME full name', 'FIXME email')
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  p.rubyforge_name       = p.name
-  p.extra_deps         = [
+  p.developer 'Brent Snook', 'brent@fuglylogic.com'
+  p.changes = p.paragraphs_of("History.txt", 0..1).join("\n\n")
+  p.rubyforge_name = p.name
+  p.extra_deps = [
     ['nokogiri','>= 1.1.1'],
   ]
   p.extra_dev_deps = [

@@ -1,21 +1,39 @@
-X add a spec around xpath locator - 1
-X convert feed_orders spec to be interaction based - 1
+X add a spec around xpath locator
+X convert feed_orders spec to be interaction based
 
-- finish gem spec including gem dependencies
-- regenerate manifest
-- finish readme file
-- add wiki pages
-- add development gem dependencies to rake task
-- ANYTHING ELSE LEFT BY NEWGEM?
+XX package as gem ''
+
+XXX finish readme file '''
+
+X change :to to :on_hearing
+
+- add wiki pages - 3
+
+- add website - 2
+
+- test on various environments
+
+- set up rubyforge account
+- publish gem to rubyforge
+- test install from rubyforge - 2
+
+- announce on roro
+
+
+????
+
+- should I package specs and features in my manifest?
+- how is the gemspec used? Do I need one?
+
+
+
+
+
 
 - test on cruise.rb
 - test on slashdot
 - test on twitter
 - test on thinkgeek
-
-- test dev and normal setup in clean GEMHOME
-
-- publish gem to rubyforge (0.0.1)
 
 - Github description
 
@@ -30,16 +48,6 @@ X convert feed_orders spec to be interaction based - 1
       - newgem
 
 - Documentation on wiki
-
-  - How does it work?
-
-    You tell Baldrick how to perform tasks and which tasks will be performed when a particular order is received. Baldrick keeps an ear out at the places you tell it to listen and then does its thing. Quite simple really.
-
-  - What is it good for
-    - Doing funky stuff based on [injour] statuses
-    - Doing funky stuff based on RSS/Atom feeds
-    - Controlling a continuous integration build light (link to Delcom)
-    - Controlling a nuclear power plant
     
   - How do I use it?
     - Creating a configuration file
@@ -55,6 +63,8 @@ X convert feed_orders spec to be interaction based - 1
     - Twitter
     - Email 
 
+
+LATER
 
 - add a spec around run_servant
 - add ability to pass in feed listener xpath expressions for who, what, where, when during configuration

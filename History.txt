@@ -1,4 +1,4 @@
-== 0.0.1 2009-02-05
+== 0.0.1 2009-02-23
 
 * 1 major enhancement:
-  * Initial release
+  * Initial release. huzzah!

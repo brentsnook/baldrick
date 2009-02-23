@@ -5,6 +5,6 @@ require File.dirname(__FILE__) + '/../steps/helpers/command_output'
 
 listen_every 0.5
 
-to /follow an order/m do
+on_hearing /follow an order/m do
   CommandOutput.add 'Order followed'
 end

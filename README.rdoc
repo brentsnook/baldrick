@@ -1,32 +1,72 @@
-= baldrick
+= Baldrick
 
-* FIX (url)
+* http://github.com/brentsnook/baldrick
 
-== DESCRIPTION:
+A dogsbody. Does what you tell it.
 
-FIX (describe your package)
+Baldrick recognises orders and then performs appropriate tasks.
+Baldrick acts as the glue between the source of the order (for example a twitter Atom feed) and the task you would like performed (put the kettle on).
 
-== FEATURES/PROBLEMS:
+== Installation
 
-* FIX (list of features or problems)
+Make Baldrick cower 'neath *your* boot:
 
-== SYNOPSIS:
+  sudo gem install baldrick
 
-  FIX (code sample of usage)
+If you want to use the injour listener you will also need to install injour[http://github.com/arunthampi/injour]
 
-== REQUIREMENTS:
+== How does it work?
 
-* FIX (list of requirements)
+You tell Baldrick:
 
-== INSTALL:
+* how to perform tasks
+* which tasks will be performed when a particular order is received
+* where to listen for new orders
 
-* FIX (sudo gem install, anything else)
+Baldrick keeps an ear out at the places you tell it to listen and then does its thing.
 
-== LICENSE:
+To tell Baldrick to print out a list of people in the twitterverse who desire a tasty beverage:
+
+  #cuppa.rb
+  require 'rubygems'
+  require 'baldrick_serve'
+
+  listen_to :feed, :at => 'http://search.twitter.com/search.atom?q=cup+of'
+
+  on_hearing /cup of (.*?)[\.,]/ do |beverage, order|
+    puts "#{order[:who]} would like a cup of #{beverage}"  
+  end
+
+Just run the script and the magic ruby fairies will take care of the rest:
+
+  ruby cuppa.rb
+
+Dismiss Baldrick with <tt>CTRL C</tt>.
+
+== How does it all work?
+
+The regex describes the phrase that triggers the task, the contents of any capturing groups are passed to the body of your task along with the order.
+The order contains *who*, *what*, *where* and *when*.
+
+Check out http://wiki.github.com/brentsnook/baldrick for details.
+
+== What is it good for?
+
+Don't look at me, I just made it. How about these for suggestions?
+
+* do cool stuff based on injour[http://github.com/arunthampi/injour] statuses
+* do cool stuff based on web (RSS/Atom) feeds
+* do cool stuff with an {Arduino board}[http://www.arduino.cc/]
+* control a continuous integration build light
+* control a nuclear power plant
+
+I'd love to hear what you use it for.
+
+== License
 
 (The MIT License)
 
-Copyright (c) 2009 Brent Snook [http://fuglylogic.com]
+Copyright (c) 2009 Brent Snook http://fuglylogic.com
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

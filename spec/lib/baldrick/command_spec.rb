@@ -97,13 +97,18 @@ describe Command do
     end
     
     describe 'when told how to perform a task' do
-      it 'should add a new task to the servant using the instructions given' do
-        procedure = lambda {}
-        Task.stub!(:new).with(/put the kettle on/, procedure).and_return(task = stub('job'))
+      
+      %w{to on_hearing}.each do |to_alias|
+      
+        it "should add a new task to the servant using the instructions given via '#{to_alias}'" do
+          procedure = lambda {}
+          Task.stub!(:new).with(/put the kettle on/, procedure).and_return(task = stub('job'))
     
-        @servant.should_receive(:add_task).with task
+          @servant.should_receive(:add_task).with task
     
-        @command.to /put the kettle on/, &procedure
+          @command.send to_alias, /put the kettle on/, &procedure
+        end
+      
       end
     end
   end

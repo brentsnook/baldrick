@@ -36,9 +36,10 @@ module Baldrick
       @servant.add_listener(listener_class.new(options))
     end
     
-    def to(matcher, &procedure)
+    def on_hearing(matcher, &procedure)
       @servant.add_task Task.new(matcher, procedure)
     end
+    alias :to :on_hearing
     
     def register_listener_type type, listener_class
       @listener_classes[type] = listener_class
