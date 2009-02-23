@@ -9,7 +9,7 @@ Baldrick acts as the glue between the source of the order (for example a twitter
 
 == Installation
 
-_Note: the rubyforge project application is currently being considered. First gem should be up within a few days. Please build yourself in the meantime - 2009-02-23_
+<em>Note: the rubyforge project application is currently being considered. First gem should be up within a few days. Please build yourself in the meantime - 2009-02-23</em>
 
 Make Baldrick cower 'neath *your* boot:
 
