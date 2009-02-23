@@ -9,11 +9,21 @@ Baldrick acts as the glue between the source of the order (for example a twitter
 
 == Installation
 
+_Note: the rubyforge project application is currently being considered. First gem should be up within a few days. Please build yourself in the meantime - 2009-02-23_
+
 Make Baldrick cower 'neath *your* boot:
 
   sudo gem install baldrick
 
 If you want to use the injour listener you will also need to install injour[http://github.com/arunthampi/injour]
+
+=== Building the Gem yourself
+
+Grab the code from github:
+
+git clone git://github.com/brentsnook/baldrick.git
+cd baldrick
+rake install_gem
 
 == How does it work?
 

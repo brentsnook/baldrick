@@ -1,23 +1,21 @@
-X add a spec around xpath locator
-X convert feed_orders spec to be interaction based
-
-XX package as gem ''
-
-XXX finish readme file '''
-
-X change :to to :on_hearing
-
-- add wiki pages - 3
 
 - add website - 2
 
-- test on various environments
+- add wiki pages - 3
 
-- set up rubyforge account
-- publish gem to rubyforge
-- test install from rubyforge - 2
+- test on various feeds - 1
 
 - announce on roro
+
+
+X
+- set up rubyforge account
+- publish gem to rubyforge
+- test install from rubyforge - 2 '''
+
+- create tag of first release
+
+
 
 
 ????
@@ -35,17 +33,6 @@ X change :to to :on_hearing
 - test on twitter
 - test on thinkgeek
 
-- Github description
-
-  - Baldrick - a dogsbody. Make Baldrick cower 'neath your boot.
-
-  - How to install
-    - install injour if you want to listen to injour
-    
-    - needed for dev
-      - cucumber
-      - rspec
-      - newgem
 
 - Documentation on wiki
     
