@@ -21,9 +21,9 @@ If you want to use the injour listener you will also need to install injour[http
 
 Grab the code from github:
 
-git clone git://github.com/brentsnook/baldrick.git
-cd baldrick
-rake install_gem
+  git clone git://github.com/brentsnook/baldrick.git
+  cd baldrick
+  rake install_gem
 
 == How does it work?
 
