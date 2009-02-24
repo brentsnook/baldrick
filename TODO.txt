@@ -1,11 +1,18 @@
 
 - add website - 2
+  - turnip logo
+  - how to include documentation from wiki? Just link?
 
-- add wiki pages - 3
+- merge README and wiki page - 1
+
+- create google group - 1
 
 - test on various feeds - 1
 
-- announce on roro
+- test on cruise.rb
+- test on slashdot
+- test on twitter
+- test on thinkgeek
 
 
 X
@@ -22,34 +29,6 @@ X
 
 - should I package specs and features in my manifest?
 - how is the gemspec used? Do I need one?
-
-
-
-
-
-
-- test on cruise.rb
-- test on slashdot
-- test on twitter
-- test on thinkgeek
-
-
-- Documentation on wiki
-    
-  - How do I use it?
-    - Creating a configuration file
-      - Telling baldrick where to listen for orders
-        - Injour
-        - RSS (including server)
-          - let me know if your case isnt covered for author etc or fork me
-      - Telling baldrick how to follow orders
-        - orders - who, what, when, where
-        - pattern matching - match on what and make matching groups available as parameters
-      
-  - Other Listeners Planned
-    - Twitter
-    - Email 
-
 
 LATER
 
