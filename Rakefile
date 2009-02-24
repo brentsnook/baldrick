@@ -5,6 +5,7 @@ require File.dirname(__FILE__) + '/lib/baldrick'
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
 $hoe = Hoe.new('baldrick', Baldrick::VERSION) do |p|
   p.developer 'Brent Snook', 'brent@fuglylogic.com'
+  p.summary = %q{Does what you tell it - glues orders to tasks.}
   p.changes = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.rubyforge_name = p.name
   p.extra_deps = [
