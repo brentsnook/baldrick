@@ -1,6 +1,7 @@
 = Baldrick
 
 * http://github.com/brentsnook/baldrick
+* http://groups.google.com/group/baldrick
 
 A dogsbody. Does what you tell it.
 
@@ -68,7 +69,7 @@ Don't look at me, I just made it. How about these for suggestions?
 * control a continuous integration build light
 * control a nuclear power plant
 
-I'd love to hear what you use it for.
+We want to know what you use it for, please send us some love on the {google group}[http://groups.google.com/group/baldrick].
 
 == License
 
