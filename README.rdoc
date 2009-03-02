@@ -2,6 +2,7 @@
 
 * http://github.com/brentsnook/baldrick
 * http://groups.google.com/group/baldrick
+* http://baldrick.lighthouseapp.com
 
 A dogsbody. Does what you tell it.
 
