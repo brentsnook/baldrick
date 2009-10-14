@@ -3,7 +3,6 @@ Manifest.txt
 README.rdoc
 Rakefile
 TODO.txt
-cuppa.rb
 features/follow_feed_orders.feature
 features/follow_injour_orders.feature
 features/resources/a_feed_servant
