@@ -8,7 +8,7 @@ describe FeedListener do
     @listener = FeedListener.new :at => ''
   end
 
-  it 'should allow RSS URL to be specified' do
+  it 'allows RSS URL to be specified' do
     @listener = FeedListener.new :at => 'http://billywitchdoctor.com/rss' 
     FeedOrders.stub!(:within).and_return []
     
@@ -17,7 +17,7 @@ describe FeedListener do
     @listener.orders  
   end  
   
-  it 'should only return orders newer than that last stored' do
+  it 'only return orders newer than that last stored' do
     
     now = Time.now
     old_news = {:what => 'shake has gone...', :when => now}
@@ -33,7 +33,7 @@ describe FeedListener do
     @listener.orders.should == [new_news, latest_news]    
   end
   
-  it "should handle orders with no 'when' specified" do
+  it "handles orders with no 'when' specified" do
     @listener.stub! :open
     FeedOrders.stub!(:within).and_return  [{:what => 'shake has gone...', :when => nil}]
 

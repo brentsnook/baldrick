@@ -9,13 +9,13 @@ describe FeedOrders do
     XPathLocator.stub!(:from_xml).and_return @item_locator
   end
   
-  it 'should first search items then elements for orders' do
+  it 'first searches items then elements for orders' do
     @item_locator.should_receive(:find_nodes_matching).with('//item', '//entry').and_return []
     
     FeedOrders.within ''
   end
   
-  it 'should create an order for every item found' do
+  it 'creates an order for every item found' do
     node = stub 'node', :null_object => true
     @item_locator.stub!(:find_nodes_matching).and_return [node, node, node]
     
@@ -34,27 +34,27 @@ describe FeedOrders do
       Time.stub!(:parse).and_return @time
     end
       
-    it "should parse the publish time and use it as 'when'" do
+    it "parses the publish time and use it as 'when'" do
       Time.stub!(:parse).with(@time.to_s).and_return @time
       @text_locator.stub!(:find_text_matching).with('published/text()', 'pubDate/text()', 'date/text()', 'updated/text()').and_return @time.to_s
       
       FeedOrders.within('').first[:when].should == @time  
     end  
     
-    it "should use the contents of the item as 'what'" do
+    it "uses the contents of the item as 'what'" do
       @text_locator.stub!(:find_text_matching).and_return stub('text', :null_object => true)
       @node.stub!(:to_s).and_return 'item node contents'
              
       FeedOrders.within('').first[:what].should == 'item node contents'
     end
     
-    it "should use the author as the 'who'" do
+    it "uses the author as the 'who'" do
       @text_locator.stub!(:find_text_matching).with('author/name/text()', 'author/text()').and_return 'Alan Moore'
              
       FeedOrders.within('').first[:who].should == 'Alan Moore'     
     end  
     
-    it "should use the link as the 'where'" do
+    it "uses the link as the 'where'" do
       @text_locator.stub!(:find_text_matching).with('link/text()', "link[@rel='alternate']/@href").and_return 'http://internet.com'
              
       FeedOrders.within('').first[:where].should == 'http://internet.com'      

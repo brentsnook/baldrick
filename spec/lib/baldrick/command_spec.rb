@@ -16,15 +16,15 @@ describe Command do
   
   describe 'when executing' do
   
-    it 'should register the injour listener type by default' do
+    it 'registers the injour listener type by default' do
       @command.listener_class_for(:injour).should == Listeners::InjourListener
     end
     
-    it 'should register the feed listener type by default' do
+    it 'registers the feed listener type by default' do
       @command.listener_class_for(:feed).should == Listeners::FeedListener
     end  
     
-    it 'should display a startup message' do
+    it 'displays a startup message' do
       @command.stub!(:should_serve?).and_return false
     
       @stdout.should_receive(:<<).with /started/
@@ -32,7 +32,7 @@ describe Command do
       @command.execute @stdout
     end
   
-    it 'should tell the servant to serve repeatedly' do
+    it 'tells the servant to serve repeatedly' do
       @command.stub!(:should_serve?).and_return true, true, false
       @command.stub!(:sleep)
     
@@ -41,7 +41,7 @@ describe Command do
       @command.execute @stdout  
     end
   
-    it 'should wait for 2 seconds between service by default' do
+    it 'waits for 2 seconds between service by default' do
       @command.stub!(:should_serve?).and_return true, false
   
       @command.should_receive(:sleep).with(2)
@@ -49,7 +49,7 @@ describe Command do
       @command.execute @stdout
     end
   
-    it 'should allow wait period between service to be specified' do
+    it 'allows wait period between service to be specified' do
       @command.stub!(:should_serve?).and_return true, false
       @command.listen_every 10
   
@@ -61,7 +61,7 @@ describe Command do
   
   describe 'configuration' do
     
-    it 'should be told of how to listen for orders of a particular type' do
+    it 'can be told of how to listen for orders of a particular type' do
       @command.register_listener_type :type, (listener_class = mock('listener class'))
   
       @command.listener_class_for(:type).should == listener_class
@@ -69,7 +69,7 @@ describe Command do
 
     describe 'when told where to listen for orders' do
     
-      it 'should add a new listener of a recognised type to the servant' do
+      it 'adds a new listener of a recognised type to the servant' do
         listener_class = stub('listener class', :new => (listener = mock('listener')))
         @command.stub!(:listener_class_for).with(:recognised_type).and_return listener_class
         
@@ -78,7 +78,7 @@ describe Command do
         @command.listen_to :recognised_type
       end
           
-      it 'should configure a new listener with given options' do
+      it 'configures a new listener with given options' do
         listener_class = stub 'listener class'
         @command.stub!(:listener_class_for).with(:listener_type).and_return listener_class
         @servant.stub! :add_listener
@@ -88,7 +88,7 @@ describe Command do
         @command.listen_to :listener_type, :option => true
       end
           
-      it 'should fail if the listener type is not recognised' do
+      it 'fails if the listener type is not recognised' do
         @command.stub!(:listener_class_for).with(:unrecognised_type).and_return nil
           
         lambda{@command.listen_to :unrecognised_type}.should raise_error(RuntimeError, 'No order listener implementation found for unrecognised_type')
@@ -100,7 +100,7 @@ describe Command do
       
       %w{to on_hearing}.each do |to_alias|
       
-        it "should add a new task to the servant using the instructions given via '#{to_alias}'" do
+        it "adds a new task to the servant using the instructions given via '#{to_alias}'" do
           procedure = lambda {}
           Task.stub!(:new).with(/put the kettle on/, procedure).and_return(task = stub('job'))
     

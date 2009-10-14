@@ -5,10 +5,10 @@ include Baldrick
 describe RunServant do
   
   describe 'when exiting' do
-    it 'should rethrow any exceptions thrown in the script body'
-    it 'should cause the command to execute'  
+    it 'rethrows any exceptions thrown in the script body'
+    it 'causes the command to execute'  
   end
   
-  it 'should delegate all calls for missing methods to the command'   
-  it 'should cause an interrupt to stop execution of the command'
+  it 'delegates all calls for missing methods to the command'   
+  it 'causes an interrupt to stop execution of the command'
 end

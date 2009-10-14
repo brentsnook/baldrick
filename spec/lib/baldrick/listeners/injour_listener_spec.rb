@@ -9,7 +9,7 @@ describe InjourListener do
     Time.stub!(:parse)
   end
 
-  it 'should only return new orders' do
+  it 'only return new orders' do
 
     first_status = <<-FIRST_STATUS
 === nathan on dk3.mordhaus.net:43215 ===
@@ -35,7 +35,7 @@ SECOND_STATUS
       }]
   end
   
-  it 'should handle multiple orders from a single user' do
+  it 'handles multiple orders from a single user' do
 
     status = <<-STATUS
 === skwisgaar on dk5.mordhaus.net:43215 ===
@@ -63,19 +63,19 @@ STATUS
       @order = @listener.orders.first
     end
     
-    it "should interpret injour user as 'who'" do
+    it "interprets injour user as 'who'" do
       @order[:who].should == 'twinkletits'
     end 
 
-    it "should interpret status as 'what'" do
+    it "interprets status as 'what'" do
       @order[:what].should == 'who wants a banana sticker?'
     end
 
-    it "should interpret injour address as 'where'" do
+    it "interprets injour address as 'where'" do
       @order[:where].should == 'dk6.mordhaus.net:43215'
     end
        
-    it "should interpret parsed time as 'when'" do
+    it "interprets parsed time as 'when'" do
       @order[:when].should == Time.parse('05-Feb-2009 11:30 PM')
     end
   end

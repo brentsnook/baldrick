@@ -4,7 +4,7 @@ include Baldrick
 
 describe Task do
 
-  it 'should check the what value of the command when determining whether or not to run' do
+  it 'checks the what value of the command when determining whether or not to run' do
     @matcher = mock('matcher')
 
     @matcher.should_receive(:match).with 'what value'
@@ -12,7 +12,7 @@ describe Task do
     run :what => 'what value'
   end
 
-  it 'should run if order matches' do
+  it 'runs if order matches' do
     @matcher = stub('matcher', :match => [''])
     @procedure = stub('procedure', :arity => 1)
 
@@ -21,7 +21,7 @@ describe Task do
     run ''
   end
 
-  it 'should not run if order does not match' do
+  it "doesn't run if order does not match" do
     @matcher = stub('matcher', :match => nil)
     @procedure = stub('procedure', :arity => 1)
 
@@ -30,7 +30,7 @@ describe Task do
     run ''
   end
 
-  it 'should only pass as many arguments as the procedure can handle' do
+  it 'only passes as many arguments as the procedure can handle' do
     @matcher = stub('matcher', :match => ['', '1', '2', '3', '4'])
     @procedure = stub('procedure', :arity => 3)
 
@@ -39,7 +39,7 @@ describe Task do
     run ''
   end
 
-  it 'should not pass the matched string to the procedure' do
+  it "doesn't pass the matched string to the procedure" do
     @matcher = stub('matcher', :match => ['matching string', '1', '2'])
     @procedure = stub('procedure', :arity => 1)
 
@@ -48,7 +48,7 @@ describe Task do
     run ''
   end
 
-  it 'should pass all matching portions of the command and the command to the procedure' do
+  it 'passes all matching portions of the command and the command to the procedure' do
     @matcher = stub('matcher', :match => ['', 'com', 'mand'])
     @procedure = stub('procedure', :arity => 3)
 

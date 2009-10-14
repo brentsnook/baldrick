@@ -4,7 +4,9 @@
 * http://groups.google.com/group/baldrick
 * http://baldrick.lighthouseapp.com
 
-A dogsbody. Does what you tell it.
+== Description
+
+A dogsbody. Does what you tell it. Use it to glue things together.
 
 Baldrick recognises orders and then performs appropriate tasks.
 Baldrick acts as the glue between the source of the order (for example a twitter Atom feed) and the task you would like performed (put the kettle on).
@@ -25,7 +27,7 @@ Grab the code from github:
   cd baldrick
   rake install_gem
 
-== How does it work?
+== Synopsis
 
 You tell Baldrick:
 
