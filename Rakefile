@@ -15,8 +15,7 @@ Hoe.spec 'baldrick' do
   self.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"],
     ['rspec', '>= 1.1.12'],
-    ['cucumber', '>= 0.1.16'],
-    ['injour', '>= 0.2.3'],
+    ['cucumber', '>= 0.1.16']
   ]
 end
 
